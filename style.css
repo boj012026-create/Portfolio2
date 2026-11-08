@@ -1,0 +1,53 @@
+:root {
+  /*variables*/
+  --gradient-deg: 135deg;
+
+  --tile-padding: 10px;
+  
+  --edge-radious: 20px;
+  --border-blur: 16px;
+  --slope-up: -6px;
+  --slope-down: 6px;
+
+  /*colors*/
+  --bg-tiles: #f5f7fa20;
+  --ln1: #f5f7fa;
+  --ln2: #c3cfe2;
+  --shade: rgba(163, 177, 198, 0.25);
+  --shimmer: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  background: linear-gradient(var(--gradient-deg), var(--ln1), var(--ln2));
+  color: grey;
+}
+
+
+.frame {
+  width: 20%;
+  height: 50%;
+  text-align: center;
+}
+
+.parent-central {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.walley {
+  background: var(--bg-tiles);
+  border-radius: var(--edge-radious);
+  box-shadow: 
+    var(--slope-up) var(--slope-up) var(--border-blur) var(--shade),
+    var(--slope-down) var(--slope-down) var(--border-blur) var(--shimmer);
+}
+
+.hill {
+  background: var(--bg-tiles);
+  border-radius: var(--edge-radious);
+  box-shadow: 
+    var(--slope-up) var(--slope-up) var(--border-blur) var(--shimmer),
+    var(--slope-down) var(--slope-down) var(--border-blur) var(--shade);
+}
