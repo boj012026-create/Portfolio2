@@ -35,6 +35,11 @@ header {
 nav {
 
 }
+
+main {
+  height: 80%; 
+  overflow-y: scroll;
+}
 .page {
   height: 100dvh;
 }
