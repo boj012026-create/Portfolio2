@@ -24,11 +24,8 @@ body {
   overflow-y: hidden;
 }
 
-.stick-top {
-  position: sticky;
-  top: 0;
-}
-.header {
+header {
+  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
