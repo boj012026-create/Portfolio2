@@ -20,6 +20,8 @@
 body {
   background: linear-gradient(var(--gradient-deg), var(--ln1), var(--ln2));
   color: grey;
+  height: 100dvh;
+  overflow-y: hidden;
 }
 
 .stick-top {
