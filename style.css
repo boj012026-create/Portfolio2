@@ -40,6 +40,11 @@ main {
   height: 80%; 
   overflow-y: scroll;
 }
+
+footer {
+  height: 10%;
+}
+
 .page {
   height: 100dvh;
 }
