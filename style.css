@@ -22,6 +22,20 @@ body {
   color: grey;
 }
 
+.stick-top {
+  position: sticky;
+  top: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em; 
+}
+
+.page {
+  height: 100dvh;
+}
 
 .frame {
   width: 20%;
@@ -37,6 +51,7 @@ body {
 }
 
 .walley {
+  margin: 2em;
   background: var(--bg-tiles);
   border-radius: var(--edge-radious);
   box-shadow: 
@@ -45,6 +60,7 @@ body {
 }
 
 .hill {
+  margin: 2em;
   background: var(--bg-tiles);
   border-radius: var(--edge-radious);
   box-shadow: 
