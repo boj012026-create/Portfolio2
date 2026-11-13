@@ -1,4 +1,4 @@
-const EMAIL = 'DIN-EPOST@example.com';
+const EMAIL = 'boj012026@gmail.com';
 const DEFAULT_ACCOUNT = 'boj012026-create';
 
 const projects = [
