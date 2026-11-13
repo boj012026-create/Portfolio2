@@ -41,8 +41,8 @@
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
 
   /* Hvor avstandene brukes */
   --header-padding: var(--space-sm) var(--space-lg);
@@ -50,7 +50,7 @@
   --navbar-link-padding: var(--space-xs) var(--space-md);
   --btn-padding: var(--space-xs) var(--space-md);
   --btn-gap: var(--space-sm);
-  --page-padding: var(--space-sm) 0 var(--space-lg);
+  --page-padding: var(--space-sm) 0 var(--space-xl);
   --section-gutter: var(--space-lg);
   --hero-padding: var(--space-lg);
   --hero-gap: var(--space-lg);
