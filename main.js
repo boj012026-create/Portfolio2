@@ -24,3 +24,24 @@ const projects = [
     description: 'Daft Punk-soundboard som spilles med tastaturet.',
   },
 ];
+function createRepoCard(p) {
+  const user = p.account ?? DEFAULT_ACCOUNT;
+  const demoUrl = p.pageUrl ?? `https://${user}.github.io/${p.id}/`;
+  const codeUrl = `https://github.com/${user}/${p.id}`;
+
+  const card = document.createElement('article');
+  card.className = 'repo-card';
+  card.id = p.id;
+  card.innerHTML = `
+    <a class="repo-card__image-link" href="${demoUrl}" target="_blank" rel="noreferrer">
+      <img class="repo-card__image" src="assets/${p.id}.jpg" alt="Skjermbilde av ${p.title}" loading="lazy" width="640" height="400">
+    </a>
+    <h3 class="repo-card__title">${p.title}</h3>
+    <p class="repo-card__text">${p.description}</p>
+    ${p.tags ? `<ul class="repo-card__tags">${p.tags.map((t) => `<li class="repo-card__tag">${t}</li>`).join('')}</ul>` : ''}
+    <div class="repo-card__links">
+      <a class="btn action-open-demo" href="${demoUrl}" target="_blank" rel="noreferrer">Demo</a>
+      <a class="btn action-open-code" href="${codeUrl}" target="_blank" rel="noreferrer">Kode</a>
+    </div>`;
+  return card;
+}
