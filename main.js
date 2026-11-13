@@ -1,3 +1,6 @@
+const EMAIL = 'DIN-EPOST@example.com';
+const DEFAULT_ACCOUNT = 'boj012026-create';
+
 const projects = [
   {
     id: 'camping-frontend',
