@@ -45,3 +45,5 @@ function createRepoCard(p) {
     </div>`;
   return card;
 }
+
+document.getElementById('repo-grid').append(...projects.map(createRepoCard));
