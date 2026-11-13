@@ -1,81 +1,258 @@
-:root {
-  /*variables*/
-  --gradient-deg: 135deg;
+/* ==========================================================
+   INNHOLD
+   1. Variabler (endre avstander, farger og skygger her)
+   2. Grunnstil
+   3. Header
+   4. Navbar
+   5. Knapper (.btn = utseende, .action-* = funksjon)
+   6. Hovedområde og sider
+   7. Forside (hero)
+   8. Prosjekter og repokort
+   9. Footer
+   ========================================================== */
 
-  --tile-padding: 10px;
-  
+/* 1. VARIABLER ------------------------------------------- */
+:root {
+  /* Neumorfisme (fra Portfolio2) */
+  --gradient-deg: 135deg;
   --edge-radious: 20px;
   --border-blur: 16px;
   --slope-up: -6px;
   --slope-down: 6px;
+  --tile-padding: 10px;
 
-  /*colors*/
   --bg-tiles: #f5f7fa20;
   --ln1: #f5f7fa;
   --ln2: #c3cfe2;
   --shade: rgba(163, 177, 198, 0.25);
   --shimmer: rgba(255, 255, 255, 0.6);
+
+  /* Skygger: hevet flate og nedtrykt flate */
+  --shadow-raised:
+    var(--slope-up) var(--slope-up) var(--border-blur) var(--shade),
+    var(--slope-down) var(--slope-down) var(--border-blur) var(--shimmer);
+  --shadow-pressed:
+    var(--slope-up) var(--slope-up) var(--border-blur) var(--shimmer),
+    var(--slope-down) var(--slope-down) var(--border-blur) var(--shade);
+  --shadow-raised-small: -4px -4px 10px var(--shimmer), 4px 4px 10px var(--shade);
+  --shadow-pressed-small: -4px -4px 10px var(--shade), 4px 4px 10px var(--shimmer);
+
+  /* Avstander: endre skalaen, så følger alt etter */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Hvor avstandene brukes */
+  --header-padding: var(--space-sm) var(--space-lg);
+  --navbar-gap: var(--space-sm);
+  --navbar-link-padding: var(--space-xs) var(--space-md);
+  --btn-padding: var(--space-xs) var(--space-md);
+  --btn-gap: var(--space-sm);
+  --page-padding: var(--space-sm) 0 var(--space-lg);
+  --section-gutter: var(--space-lg);
+  --hero-padding: var(--space-lg);
+  --hero-gap: var(--space-lg);
+  --grid-gap: var(--space-lg);
+  --card-padding: var(--space-md);
+  --card-gap: var(--space-xs);
+  --footer-padding: var(--space-sm) var(--space-lg);
+  --footer-gap: var(--space-md);
+
+  /* Tekst */
+  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --font-size-body: 1.0625rem;
+  --font-size-small: 0.85rem;
+  --line-height: 1.6;
+  --color-text: #2f3a4d;
+  --color-muted: #4d596c;
+  --color-accent: #2a3ec0;
 }
+
+/* 2. GRUNNSTIL ------------------------------------------- */
+* { box-sizing: border-box; }
 
 body {
-  background: linear-gradient(var(--gradient-deg), var(--ln1), var(--ln2));
-  color: grey;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   height: 100dvh;
-  overflow-y: hidden;
+  overflow: hidden;
+  background: linear-gradient(var(--gradient-deg), var(--ln1), var(--ln2)) fixed;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height);
 }
 
-header {
-  height: 10%;
+h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
+a { color: var(--color-accent); }
+a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* 3. HEADER ---------------------------------------------- */
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2em; 
+  padding: var(--header-padding);
 }
 
-nav {
-
+/* 4. NAVBAR ---------------------------------------------- */
+.navbar { display: flex; gap: var(--navbar-gap); }
+.navbar__link {
+  padding: var(--navbar-link-padding);
+  border-radius: 14px;
+  background: var(--bg-tiles);
+  box-shadow: var(--shadow-raised-small);
+  color: var(--color-text);
+  text-decoration: none;
+}
+.navbar__link:hover { color: var(--color-accent); }
+.navbar__link--active {
+  box-shadow: var(--shadow-pressed-small);
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
-main {
-  height: 80%; 
-  overflow-y: scroll;
+/* 5. KNAPPER -----------------------------------------------
+   .btn      = utseende
+   .action-* = hva knappen gjør; ingen stil her, brukes av
+               main.js og til feilsøking                      */
+.btn {
+  display: inline-block;
+  padding: var(--btn-padding);
+  border-radius: 14px;
+  background: var(--bg-tiles);
+  box-shadow: var(--shadow-raised-small);
+  color: var(--color-text);
+  text-decoration: none;
 }
+.btn:hover { color: var(--color-accent); }
+.btn:active { box-shadow: var(--shadow-pressed-small); color: var(--color-accent); }
 
-footer {
-  height: 10%;
+/* 6. HOVEDOMRÅDE OG SIDER -------------------------------- */
+.site-main {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
+@media (prefers-reduced-motion: reduce) { .site-main { scroll-behavior: auto; } }
 
 .page {
-  height: 100%;
+  min-height: 100%;
+  padding: var(--page-padding);
+  scroll-snap-align: start;
 }
 
-.frame {
-  width: 20%;
-  height: 50%;
-  text-align: center;
-}
-
-.parent-central {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-}
-
-.walley {
-  margin: 2em;
+/* 7. FORSIDE --------------------------------------------- */
+.hero__text        { display: contents; }
+.hero__title       { grid-area: title; }
+.hero__lead        { grid-area: lead; }
+.hero__photo-frame { grid-area: photo; }
+.hero__actions     { grid-area: actions; }
+.hero {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "lead"
+    "photo"
+    "p1"
+    "p2"
+    "p3"
+    "actions";
+  gap: var(--hero-gap);
+  align-items: center;
+  margin: var(--section-gutter);
+  padding: var(--hero-padding);
   background: var(--bg-tiles);
   border-radius: var(--edge-radious);
-  box-shadow: 
-    var(--slope-up) var(--slope-up) var(--border-blur) var(--shade),
-    var(--slope-down) var(--slope-down) var(--border-blur) var(--shimmer);
+  box-shadow: var(--shadow-raised);
 }
-
-.hill {
-  margin: 2em;
+@media (min-width: 52rem) {
+.hero { 
+  grid-template-columns: 1fr 18rem;
+  grid-template-areas:
+      "title   photo"
+      "lead    photo"
+      "p1      photo"
+      "p2      photo"
+      "p3      photo"
+      "actions photo";
+  padding: var(--space-xl);
+}
+}
+.hero__title { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.hero__lead { font-size: 1.35rem; margin: var(--space-xs) 0 var(--space-sm); }
+.hero__paragraph { max-width: 36rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--btn-gap); margin-top: var(--space-md); }
+.hero__photo-frame {
+  max-width: 18rem;
+  justify-self: center;
+  padding: var(--tile-padding);
   background: var(--bg-tiles);
   border-radius: var(--edge-radious);
-  box-shadow: 
-    var(--slope-up) var(--slope-up) var(--border-blur) var(--shimmer),
-    var(--slope-down) var(--slope-down) var(--border-blur) var(--shade);
+  box-shadow: var(--shadow-pressed);
+}
+.hero__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: calc(var(--edge-radious) - 6px);
+}
+
+/* 8. PROSJEKTER OG REPOKORT ------------------------------ */
+.projects__title { font-size: clamp(2rem, 4vw, 2.6rem); padding: var(--space-sm) var(--section-gutter) 0; }
+.projects__subtitle { color: var(--color-muted); padding: 0 var(--section-gutter); margin: var(--space-xs) 0 0; max-width: 40rem; }
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--grid-gap);
+  padding: var(--section-gutter);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  padding: var(--card-padding);
+  background: var(--bg-tiles);
+  border-radius: var(--edge-radious);
+  box-shadow: var(--shadow-raised);
+}
+.repo-card__image-link {
+  display: block;
+  margin-bottom: var(--space-xs);
+  padding: var(--tile-padding);
+  background: var(--bg-tiles);
+  border-radius: var(--edge-radious);
+  box-shadow: var(--shadow-pressed);
+}
+.repo-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: calc(var(--edge-radious) - 6px);
+}
+.repo-card__title { font-size: 1.25rem; }
+.repo-card__text { margin: 0; color: var(--color-muted); }
+.repo-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding: 0; margin: 0; list-style: none; }
+.repo-card__tag {
+  padding: 0 var(--space-sm);
+  border-radius: 999px;
+  box-shadow: inset -2px -2px 5px var(--shimmer), inset 2px 2px 5px var(--shade);
+  font-size: var(--font-size-small);
+}
+.repo-card__links { display: flex; gap: var(--btn-gap); margin-top: auto; padding-top: var(--space-sm); }
+
+/* 9. FOOTER ---------------------------------------------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--footer-gap);
+  padding: var(--footer-padding);
 }
