@@ -47,3 +47,8 @@ function createRepoCard(p) {
 }
 
 document.getElementById('repo-grid').append(...projects.map(createRepoCard));
+
+// Funksjon: e-postlenker (.action-send-email)
+document.querySelectorAll('.action-send-email').forEach((a) => {
+  a.href = `mailto:${EMAIL}`;
+});
