@@ -24,6 +24,7 @@ const projects = [
     description: 'Daft Punk-soundboard som spilles med tastaturet.',
   },
 ];
+
 function createRepoCard(p) {
   const user = p.account ?? DEFAULT_ACCOUNT;
   const demoUrl = p.pageUrl ?? `https://${user}.github.io/${p.id}/`;
@@ -52,3 +53,21 @@ document.getElementById('repo-grid').append(...projects.map(createRepoCard));
 document.querySelectorAll('.action-send-email').forEach((a) => {
   a.href = `mailto:${EMAIL}`;
 });
+
+// Funksjon: marker aktiv side i menyen mens man ruller
+const navLinks = [...document.querySelectorAll('.navbar__link')];
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((a) => {
+        const isActive = a.getAttribute('href') === `#${entry.target.id}`;
+        a.classList.toggle('navbar__link--active', isActive);
+        if (isActive) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    });
+  },
+  { root: document.getElementById('scroller'), threshold: 0.5 }
+);
+document.querySelectorAll('.page').forEach((s) => observer.observe(s));
