@@ -131,7 +131,11 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   text-decoration: none;
 }
 .btn:hover { color: var(--color-accent); }
-.btn:active { box-shadow: var(--shadow-pressed-small); color: var(--color-accent); }
+.btn:active {
+  box-shadow: var(--shadow-pressed-small);
+  color: var(--color-accent);
+  background-color: var(--twilight);
+}
 
 /* 6. HOVEDOMRÅDE OG SIDER -------------------------------- */
 .site-main {
@@ -167,7 +171,7 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   align-items: center;
   margin: var(--section-gutter);
   padding: var(--hero-padding);
-  background: var(--bg-tiles);
+  background: var(--twilight);
   border-radius: var(--edge-radious);
   box-shadow: var(--shadow-raised);
 }
