@@ -54,7 +54,7 @@
   --page-padding: var(--space-sm) 0 var(--space-xl);
   --section-gutter: var(--space-lg);
   --hero-padding: var(--space-lg);
-  --hero-gap: var(--space-lg);
+  --hero-gap: var(--space-md);
   --grid-gap: var(--space-lg);
   --card-padding: var(--space-md);
   --card-gap: var(--space-xs);
@@ -190,7 +190,10 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 }
 .hero__title { font-size: clamp(2.2rem, 5vw, 3.2rem); }
 .hero__lead { font-size: 1.35rem; margin: var(--space-xs) 0 var(--space-sm); }
-.hero__paragraph { max-width: 36rem; }
+.hero__paragraph {
+  max-width: 36rem;
+  margin: 0;
+}
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--btn-gap); margin-top: var(--space-md); }
 .hero__photo-frame {
   max-width: 18rem;
