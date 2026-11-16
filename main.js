@@ -71,6 +71,10 @@ const observer = new IntersectionObserver(
       });
     });
   },
-  { root: document.getElementById('scroller'), threshold: 0.5 }
+  { root: document.getElementById('scroller'),
+    // Creates a detection zone in the middle 10% of the scroller
+    rootMargin: '-45% 0px -45% 0px',
+    threshold: 0,
+  }
 );
 document.querySelectorAll('.page').forEach((s) => observer.observe(s));
