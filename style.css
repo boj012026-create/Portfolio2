@@ -112,6 +112,7 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 .navbar__link:hover { color: var(--color-accent); }
 .navbar__link--active {
   box-shadow: var(--shadow-pressed-small);
+  background-color: var(--twilight);
   color: var(--color-accent);
   font-weight: 600;
 }
