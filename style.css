@@ -197,7 +197,6 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--btn-gap); margin-top: var(--space-md); }
 .hero__photo-frame {
   max-width: 18rem;
-  justify-self: center;
   padding: var(--tile-padding);
   background: var(--bg-tiles);
   border-radius: var(--edge-radious);
