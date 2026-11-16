@@ -170,6 +170,7 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
     "actions";
   gap: var(--hero-gap);
   align-items: center;
+  justify-content: center;
   margin: var(--section-gutter);
   padding: var(--hero-padding);
   background: var(--twilight);
