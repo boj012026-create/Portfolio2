@@ -262,3 +262,16 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   gap: var(--footer-gap);
   padding: var(--footer-padding);
 }
+.site-footer__link {
+  padding: var(--navbar-link-padding);
+  border-radius: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.site-footer__link:hover { color: var(--color-accent); }
+.site-footer__link:active {
+  box-shadow: var(--shadow-pressed-small);
+  background: var(--bg-tiles);
+  color: var(--color-accent);
+  font-weight: 600;
+}
