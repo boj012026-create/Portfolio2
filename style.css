@@ -271,7 +271,9 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   color: var(--color-text);
   text-decoration: none;
 }
-.site-footer__link:hover { color: var(--color-accent); }
+.site-footer__link:hover {
+  color: var(--color-accent);
+}
 .site-footer__link:active {
   box-shadow: var(--shadow-pressed-small);
   background: var(--bg-tiles);
