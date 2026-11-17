@@ -49,7 +49,7 @@
   /* Hvor avstandene brukes */
   --header-padding: var(--space-sm) var(--space-lg);
   --navbar-gap: var(--space-sm);
-  --navbar-link-padding: var(--space-xs) var(--space-md);
+  --navbar-link-padding: var(--space-xs) var(--space-sm);
   --btn-padding: var(--space-xs) var(--space-md);
   --btn-gap: var(--space-sm);
   --page-padding: var(--space-sm) 0 var(--space-xl);
@@ -59,8 +59,8 @@
   --grid-gap: var(--space-lg);
   --card-padding: var(--space-md);
   --card-gap: var(--space-xs);
-  --footer-padding: var(--space-sm) var(--space-lg);
-  --footer-gap: var(--space-md);
+  --footer-padding: var(--space-xs) var(--space-sm);
+  --footer-gap: var(--space-sm);
 
   /* Tekst */
   --font-body: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
@@ -273,7 +273,7 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 /* 9. FOOTER ---------------------------------------------- */
 .site-footer {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
   gap: var(--footer-gap);
   padding: var(--footer-padding);
 }
