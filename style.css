@@ -222,11 +222,14 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: var(--grid-gap);
   padding: var(--section-gutter);
+  scroll-snap-type: y mandatory;
 }
 
 .repo-card {
   position: sticky;
   top: 2em;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: var(--card-gap);
