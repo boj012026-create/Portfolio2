@@ -92,30 +92,34 @@ h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
 a { color: var(--color-accent); }
 a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
-/* 3. HEADER ---------------------------------------------- */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--header-padding);
-}
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
-/* 4. NAVBAR ---------------------------------------------- */
-.navbar { display: flex; gap: var(--navbar-gap); }
-.navbar__link {
-  padding: var(--navbar-link-padding);
-  border-radius: 14px;
-  background: var(--bg-tiles);
-  box-shadow: var(--shadow-raised-small);
-  color: var(--color-text);
-  text-decoration: none;
+.skip-link {
+  position: absolute;
+  left: var(--space-sm);
+  top: -4rem;
+  z-index: 20;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--on-accent);
 }
-.navbar__link:hover { color: var(--color-accent); }
-.navbar__link--active {
-  box-shadow: var(--shadow-pressed-small);
-  background-color: var(--twilight);
-  color: var(--color-accent);
-  font-weight: 600;
+.skip-link:focus { top: var(--space-sm); }
+
+/* 3. FELLES DELER ---------------------------------------- */
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+
+.section { padding-block: var(--space-xl); }
+
+.section-title { font-size: clamp(1.9rem, 4.2vw, 2.75rem); }
+
+/* Liten monospace-merkelapp over overskrifter */
+.label {
+  margin-bottom: var(--space-sm);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-small);
+  letter-spacing: 0.02em;
 }
 
 /* 5. KNAPPER -----------------------------------------------
