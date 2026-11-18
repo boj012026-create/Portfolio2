@@ -321,25 +321,30 @@ a { color: var(--accent); }
 }
 .repo-card__link:hover { text-decoration: underline; }
 
-/* 9. FOOTER ---------------------------------------------- */
-.site-footer {
+/* 8. FOOTER ---------------------------------------------- */
+.site-footer { padding-block: var(--space-md); border-top: 1px solid var(--shade); }
+.site-footer__inner {
   display: flex;
-  justify-content: space-around;
-  gap: var(--footer-gap);
-  padding: var(--footer-padding);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
 }
-.site-footer__link {
-  padding: var(--navbar-link-padding);
-  border-radius: 14px;
-  color: var(--color-text);
-  text-decoration: none;
+.site-footer__note { color: var(--ink-muted); font-family: var(--font-mono); font-size: var(--font-size-small); }
+.site-footer__links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+.site-footer__link { color: var(--ink-muted); text-decoration: none; }
+.site-footer__link:hover { color: var(--accent); }
+
+/* BRYTNINGSPUNKT: ett punkt for mobil og pc -------------- */
+@media (max-width: 51.99rem) {
+  .brand__name { display: none; }
+  .navbar { gap: var(--space-sm); }
+  .navbar .btn { padding: 0.5rem 0.9rem; }
+  .code-card__chip--top { top: -1rem; }
+  .code-card__chip--bottom { bottom: -1rem; }
 }
-.site-footer__link:hover {
-  color: var(--color-accent);
-}
-.site-footer__link:active {
-  box-shadow: var(--shadow-pressed-small);
-  background: var(--bg-tiles);
-  color: var(--color-accent);
-  font-weight: 600;
+@media (min-width: 52rem) {
+  .hero__inner { grid-template-columns: 1.1fr 1fr; }
+  .about__inner { grid-template-columns: auto 1fr; gap: var(--space-xl); }
+  .repo-grid { grid-template-columns: repeat(2, 1fr); }
 }
