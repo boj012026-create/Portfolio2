@@ -271,62 +271,55 @@ a { color: var(--accent); }
 }
 .photo-card__caption { padding: var(--space-sm) var(--space-xs) var(--space-xs); color: var(--ink-muted); font-size: 0.9rem; }
 
-/* 8. PROSJEKTER OG REPOKORT ------------------------------ */
-.projects__title { font-size: clamp(2rem, 4vw, 2.6rem); padding: var(--space-sm) var(--section-gutter) 0; }
-.projects__subtitle { color: var(--color-muted); padding: 0 var(--section-gutter); margin: var(--space-xs) 0 0; max-width: 40rem; }
+.facts { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-sm); }
+.fact { display: flex; gap: var(--space-xs); font-size: 0.9rem; line-height: 1.4; }
+.fact__icon { margin-top: 0.1rem; color: var(--accent); }
+.fact__title { display: block; color: var(--ink); }
+.fact__text { color: var(--ink-muted); font-size: var(--font-size-small); }
 
-.repo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: var(--grid-gap);
-  padding: var(--section-gutter);
-  scroll-snap-type: y mandatory;
-}
+/* 7. PROSJEKTER OG REPOKORT ------------------------------ */
+.projects__subtitle { margin-top: var(--space-xs); color: var(--ink-muted); }
+
+.repo-grid { display: grid; gap: var(--space-lg); margin-top: var(--space-lg); }
 
 .repo-card {
-  position: sticky;
-  top: 2em;
-  scroll-snap-stop: always;
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  gap: var(--card-gap);
-  padding: var(--card-padding);
-  background: var(--background);
-  border-radius: var(--edge-radious);
-  box-shadow: var(--shadow-pressed);
-}
-@media (min-width: 687px) {
-.repo-card { 
-  position: static;
-  
-}
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
 }
 .repo-card__image-link {
   display: block;
   margin-bottom: var(--space-xs);
-  padding: var(--tile-padding);
-  background: var(--bg-tiles);
-  border-radius: var(--edge-radious);
-  box-shadow: var(--shadow-pressed);
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-raised-sm);
 }
 .repo-card__image {
-  display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: calc(var(--edge-radious) - 6px);
+  object-position: top;
+  border-radius: var(--radius-sm);
 }
-.repo-card__title { font-size: 1.25rem; }
-.repo-card__text { margin: 0; color: var(--color-muted); }
-.repo-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding: 0; margin: 0; list-style: none; }
-.repo-card__tag {
-  padding: 0 var(--space-sm);
-  border-radius: 999px;
-  box-shadow: inset -2px -2px 5px var(--shimmer), inset 2px 2px 5px var(--shade);
-  font-size: var(--font-size-small);
+.repo-card__title { font-size: 1.5rem; }
+.repo-card__text { color: var(--ink-muted); }
+.repo-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); }
+.repo-card__tag { color: var(--ink-muted); font-family: var(--font-mono); font-size: var(--font-size-small); }
+.repo-card__links { display: flex; gap: var(--space-md); margin-top: auto; padding-top: var(--space-xs); }
+.repo-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
 }
-.repo-card__links { display: flex; gap: var(--btn-gap); margin-top: auto; padding-top: var(--space-sm); }
+.repo-card__link:hover { text-decoration: underline; }
 
 /* 9. FOOTER ---------------------------------------------- */
 .site-footer {
