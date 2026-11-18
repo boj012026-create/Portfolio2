@@ -28,6 +28,9 @@ const projects = [
   },
 ];
 
+// Ikon fra SVG-sprite i index.html
+const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#icon-${name}"/></svg>`;
+
 function createRepoCard(p) {
   const user = p.account ?? DEFAULT_ACCOUNT;
   const demoUrl = p.pageUrl ?? `https://${user}.github.io/${p.id}/`;
@@ -44,8 +47,8 @@ function createRepoCard(p) {
     <p class="repo-card__text">${p.description}</p>
     ${p.tags ? `<ul class="repo-card__tags">${p.tags.map((t) => `<li class="repo-card__tag">${t}</li>`).join('')}</ul>` : ''}
     <div class="repo-card__links">
-      <a class="btn action-open-demo" href="${demoUrl}" target="_blank" rel="noreferrer">Demo</a>
-      <a class="btn action-open-code" href="${codeUrl}" target="_blank" rel="noreferrer">Kode</a>
+      <a class="repo-card__link action-open-demo" href="${demoUrl}" target="_blank" rel="noreferrer">Demo ${icon('arrow-up-right')}</a>
+      <a class="repo-card__link action-open-code" href="${codeUrl}" target="_blank" rel="noreferrer">Kode ${icon('github')}</a>
     </div>`;
   return card;
 }
