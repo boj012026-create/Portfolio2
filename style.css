@@ -56,19 +56,16 @@
 }
 
 /* 2. GRUNNSTIL ------------------------------------------- */
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100dvh;
-  overflow: hidden;
-  background: var(--background);
-  color: var(--color-text);
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
