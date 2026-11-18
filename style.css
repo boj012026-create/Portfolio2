@@ -69,7 +69,7 @@
   --line-height: 1.6;
   --color-text: #2f3a4d;
   --color-muted: #4d596c;
-  --color-accent: #2a3ec0;
+  --color-accent: #526DD7;
 }
 
 /* 2. GRUNNSTIL ------------------------------------------- */
@@ -190,13 +190,22 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   padding: var(--space-xl);
 }
 }
-.hero__title { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+}
 .hero__lead { font-size: 1.35rem; margin: var(--space-xs) 0 var(--space-sm); }
 .hero__paragraph {
   max-width: 36rem;
   margin: 0;
 }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--btn-gap); margin-top: var(--space-md); }
+.action-go-projects {
+  color: var(--ln1);
+  background: var(--color-accent);
+}
+.action-go-projects:hover {
+  color: var(--color-text);
+}
 .hero__photo-frame {
   max-width: 18rem;
   padding: var(--tile-padding);
