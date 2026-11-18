@@ -87,9 +87,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -0.01em; }
-a { color: var(--color-accent); }
-a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+h1, h2, h3, p, figure, ul, pre { margin: 0; }
+h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; }
+ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
@@ -161,19 +164,27 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   min-height: var(--header-height);
 }
 
-/* 6. HOVEDOMRÅDE OG SIDER -------------------------------- */
-.site-main {
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+.brand { display: flex; align-items: center; gap: var(--space-sm); color: var(--ink); text-decoration: none; }
+.brand__mark {
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised-sm);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
-@media (prefers-reduced-motion: reduce) { .site-main { scroll-behavior: auto; } }
+.brand__name { font-weight: 600; font-style: italic; }
 
-.page {
-  min-height: 100%;
-  padding: var(--page-padding);
-  scroll-snap-align: start;
+.navbar { display: flex; align-items: center; gap: var(--space-md); white-space: nowrap; }
+.navbar__link {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  text-decoration: none;
 }
+.navbar__link:hover,
+.navbar__link--active { color: var(--accent); }
 
 /* 7. FORSIDE --------------------------------------------- */
 .hero__text        { display: contents; }
