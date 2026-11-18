@@ -34,22 +34,65 @@
     </div>
   </header>
 
-  <main class="site-main" id="scroller">
-    <section id="hero" class="page">
-      <div class="hero">
+  <main id="main">
+    <section id="hero" class="section hero">
+      <div class="container hero__inner">
         <div class="hero__text">
-          <h1 class="hero__title">Jan Olav Berg</h1>
-          <p class="hero__lead">Junior fullstack-utvikler som søker praksisplass i eller rundt Bergen.</p>
-          <p class="hero__paragraph">Bachelor i datateknologi (UiB) og fullstack-kurs hos Jobloop (Kodehodet). Jeg bygger med React, TypeScript og Node, og bruker TDD, DRY, SOLID og Commitizen for å skrive ren og vedlikeholdbar kode.</p>
-          <p class="hero__paragraph">Over 15 år i detaljhandelen har lært meg kundeservice, teamledelse og å holde hodet kaldt når noe uforutsett dukker opp.</p>
-          <p class="hero__paragraph">Jeg brenner for kunstig intelligens, design, brukeropplevelse og optimalisering. Ta gjerne kontakt for en uformell prat, digitalt eller i Bergen.</p>
+          <p class="label">Junior fullstack-utvikler</p>
+          <h1 class="hero__title">Jan Olav Berg.<span class="hero__title-accent">Bygger for nettet.</span></h1>
+          <p class="hero__lead">Bachelor i datateknologi (UiB) og fullstack-kurs hos Jobloop (Kodehodet). Jeg bygger med React, TypeScript og Node, og søker praksisplass i eller rundt Bergen.</p>
           <div class="hero__actions">
-            <a class="btn action-go-projects" href="#project">Se prosjekter</a>
-            <a class="btn action-send-email" href="mailto:DIN-EPOST@example.com">Send e-post</a>
+            <a class="btn btn--primary action-go-projects" href="#project">Se prosjekter <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"/></svg></a>
+            <a class="btn btn--raised action-send-email" href="mailto:DIN-EPOST@example.com">Send e-post <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg></a>
           </div>
+          <p class="hero__status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Åpen for praksisplass
+            <a class="icon-link" href="https://github.com/boj012026-create" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg></a>
+            <a class="icon-link" href="https://www.linkedin.com/in/jan-olav-berg-a90734b3/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg></a>
+          </p>
         </div>
-        <div class="hero__photo-frame">
-          <img class="hero__photo" src="assets/profile-img.jpg" alt="Portrett av Jan Olav Berg" width="450" height="600">
+
+        <div class="code-card" aria-hidden="true">
+          <span class="code-card__chip code-card__chip--top">{ }</span>
+          <div class="code-card__window">
+            <p class="code-card__file">hei-verden.ts</p>
+            <pre class="code-card__editor"><code><span class="tok-kw">const</span> utvikler = {
+  navn: <span class="tok-str">"Jan Olav Berg"</span>,
+  rolle: <span class="tok-str">"Junior fullstack"</span>,
+  stack: [<span class="tok-str">"React"</span>, <span class="tok-str">"TypeScript"</span>, <span class="tok-str">"Node"</span>],
+  sted: <span class="tok-str">"Bergen"</span>,
+};</code></pre>
+            <p class="code-card__status">Klar til å bygge noe bra.</p>
+          </div>
+          <span class="code-card__chip code-card__chip--bottom">Frontend + backend</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container about__inner">
+        <figure class="photo-card">
+          <img class="photo-card__image" src="assets/profile-img.jpg" alt="Portrett av Jan Olav Berg" width="450" height="600" loading="lazy">
+          <figcaption class="photo-card__caption">Jan Olav Berg</figcaption>
+        </figure>
+
+        <div class="about__text">
+          <p class="label">Litt om meg</p>
+          <h2 class="section-title">Ren kode og kaldt hode.</h2>
+          <p>Jeg bruker TDD, DRY, SOLID og Commitizen for å skrive ren og vedlikeholdbar kode.</p>
+          <p>Over 15 år i detaljhandelen har lært meg kundeservice, teamledelse og å holde hodet kaldt når noe uforutsett dukker opp.</p>
+          <p>Jeg brenner for kunstig intelligens, design, brukeropplevelse og optimalisering. Ta gjerne kontakt for en uformell prat, digitalt eller i Bergen.</p>
+          <ul class="facts">
+            <li class="fact">
+              <svg class="icon fact__icon" aria-hidden="true"><use href="#icon-pin"/></svg>
+              <span><strong class="fact__title">Bergen</strong><span class="fact__text">Digitalt eller på kontor</span></span>
+            </li>
+            <li class="fact">
+              <svg class="icon fact__icon" aria-hidden="true"><use href="#icon-chat"/></svg>
+              <span><strong class="fact__title">Over 15 år i detaljhandelen</strong><span class="fact__text">Kundeservice og teamledelse</span></span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
