@@ -74,8 +74,7 @@ const observer = new IntersectionObserver(
       });
     });
   },
-  { root: document.getElementById('scroller'),
-    // Creates a detection zone in the middle 10% of the scroller
+  { // Smal sone midt i vinduet: seksjonen som krysser den er aktiv
     rootMargin: '-45% 0px -45% 0px',
     threshold: 0,
   }
