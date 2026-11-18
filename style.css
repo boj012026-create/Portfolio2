@@ -11,7 +11,20 @@
    9. Footer
    ========================================================== */
 
-/* 1. VARIABLER ------------------------------------------- */
+/* 1. SKRIFTER OG VARIABLER ------------------------------- */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
 
