@@ -45,9 +45,11 @@ Demo-lenken blir `https://<konto>.github.io/<id>/`, og kodelenken blir
 
 ## Design og CSS
 
-- **Variabler:** avstander, farger, radius og skygger ligger øverst i `style.css`.
+- **Variabler:** farger, avstander, radius, skygger og skrifter ligger øverst i `style.css`.
   Endre dem der for å justere hele siden.
+- **Skrifter:** Inter og JetBrains Mono ligger i `assets/fonts/` (ingen forespørsler til Google).
 - **Klassenavn:** hver del har egne navn i BEM-stil (`navbar__link`, `repo-card__title`).
-- **Knapper:** `.btn` bestemmer utseendet, og `.action-*` sier hva knappen gjør.
-  `action-*`-klassene har ingen stil og brukes av JavaScript.
+- **Knapper:** `.btn` er grunnformen, `.btn--primary` og `.btn--raised` bestemmer utseendet,
+  og `.action-*` sier hva knappen gjør. `action-*`-klassene har ingen stil og brukes av JavaScript.
+- **Ikoner:** SVG-sprite øverst i `index.html`. Bruk `<svg class="icon"><use href="#icon-github"/></svg>`.
 - **Brytningspunkt:** ett punkt for mobil og pc, ved 52rem.
