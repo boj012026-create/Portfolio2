@@ -202,37 +202,74 @@ a { color: var(--accent); }
   color: var(--ink-muted);
   font-size: var(--font-size-small);
 }
-.hero__title {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+.status-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); }
+.icon-link { display: inline-flex; color: var(--ink-muted); }
+.icon-link:hover { color: var(--accent); }
+.icon-link .icon { width: 1.3rem; height: 1.3rem; }
+
+/* Kodekort (dekorasjon) */
+.code-card {
+  position: relative;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
 }
-.hero__lead { font-size: 1.35rem; margin: var(--space-xs) 0 var(--space-sm); }
-.hero__paragraph {
-  max-width: 36rem;
-  margin: 0;
-}
-.hero__actions { display: flex; flex-wrap: wrap; gap: var(--btn-gap); margin-top: var(--space-md); }
-.action-go-projects {
-  color: var(--ln1);
-  background: var(--color-accent);
-}
-.action-go-projects:hover {
-  color: var(--color-text);
-}
-.hero__photo-frame {
-  max-width: 18rem;
-  padding: var(--tile-padding);
-  background: var(--bg-tiles);
-  border-radius: var(--edge-radious);
+.code-card__window {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-pressed);
 }
-.hero__photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: calc(var(--edge-radious) - 6px);
+.code-card__file { color: var(--ink-muted); font-family: var(--font-mono); font-size: var(--font-size-small); text-align: center; }
+.code-card__editor {
+  overflow-x: auto;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
 }
+.code-card__status { color: var(--ink-muted); font-family: var(--font-mono); font-size: var(--font-size-small); }
+.tok-kw  { color: var(--accent); }
+.tok-str { color: var(--accent-soft); }
+
+.code-card__chip {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised-sm);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-small);
+}
+.code-card__chip--top    { top: -1.25rem; right: var(--space-md); }
+.code-card__chip--bottom { bottom: -1.25rem; right: var(--space-md); }
+
+/* 6. OM MEG ---------------------------------------------- */
+.about__inner { display: grid; gap: var(--space-lg); align-items: center; }
+.about__text { display: grid; gap: var(--space-sm); max-width: 38rem; color: var(--ink-muted); }
+.about__text .section-title { margin-bottom: var(--space-xs); color: var(--ink); }
+
+.photo-card {
+  max-width: 24rem;
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
+}
+.photo-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-md);
+}
+.photo-card__caption { padding: var(--space-sm) var(--space-xs) var(--space-xs); color: var(--ink-muted); font-size: 0.9rem; }
 
 /* 8. PROSJEKTER OG REPOKORT ------------------------------ */
 .projects__title { font-size: clamp(2rem, 4vw, 2.6rem); padding: var(--space-sm) var(--section-gutter) 0; }
