@@ -121,24 +121,44 @@ a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
   letter-spacing: 0.02em;
 }
 
-/* 5. KNAPPER -----------------------------------------------
-   .btn      = utseende
-   .action-* = hva knappen gjør; ingen stil her, brukes av
-               main.js og til feilsøking                      */
+.icon { width: 1.1em; height: 1.1em; flex: none; }
+
+/* Knapper:
+   .btn      = grunnform
+   .btn--*   = utseende
+   .action-* = hva knappen gjør; ingen stil her, brukes av main.js */
 .btn {
-  display: inline-block;
-  padding: var(--btn-padding);
-  border-radius: 14px;
-  background: var(--bg-tiles);
-  box-shadow: var(--shadow-raised-small);
-  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
+  transition: box-shadow 0.15s, color 0.15s;
 }
-.btn:hover { color: var(--color-accent); }
-.btn:active {
-  box-shadow: var(--shadow-pressed-small);
-  color: var(--color-accent);
-  background-color: var(--twilight);
+.btn--raised { background: var(--surface); box-shadow: var(--shadow-raised-sm); color: var(--ink); }
+.btn--raised:hover { color: var(--accent); }
+.btn--raised:active { box-shadow: var(--shadow-pressed); }
+.btn--primary { background: var(--accent); box-shadow: var(--shadow-raised-sm); color: var(--on-accent); }
+.btn--primary:hover { background: #4458c4; }
+.btn--primary:active { box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.25); }
+
+/* 4. HEADER OG NAVBAR ------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(243, 245, 250, 0.85);
+  backdrop-filter: blur(12px);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  min-height: var(--header-height);
 }
 
 /* 6. HOVEDOMRÅDE OG SIDER -------------------------------- */
