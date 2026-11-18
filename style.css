@@ -13,31 +13,29 @@
 
 /* 1. VARIABLER ------------------------------------------- */
 :root {
-  /* Neumorfisme (fra Portfolio2) */
-  --gradient-deg: 135deg;
-  --edge-radious: 20px;
-  --border-blur: 20px;
-  --slope-up: -6px;
-  --slope-down: 6px;
-  --tile-padding: 10px;
+  color-scheme: light;
 
-  --bg-tiles: #f5f7fa20;
-  --ln1: #f5f7fa;
-  --ln2: #c3cfe2;
-  --background: linear-gradient(var(--gradient-deg), var(--ln1), var(--ln2)) fixed;
-  --shade: rgba(163, 177, 198, 0.25);
-  --twilight: rgba(229, 236, 246, 0.20);
-  --shimmer: rgba(255, 255, 255, 0.6);
+  /* Farger */
+  --bg: #f3f5fa;
+  --surface: #f7f9fd;
+  --surface-raised: #fbfcff;
+  --ink: #1e2a44;
+  --ink-muted: #5f6b85;
+  --accent: #5468d4;
+  --accent-soft: #7a8be0;
+  --on-accent: #fff;
 
-  /* Skygger: hevet flate og nedtrykt flate */
-  --shadow-raised:
-    var(--slope-up) var(--slope-up) var(--border-blur) var(--shade),
-    var(--slope-down) var(--slope-down) var(--border-blur) var(--shimmer);
-  --shadow-pressed:
-    var(--slope-up) var(--slope-up) var(--border-blur) var(--shimmer),
-    var(--slope-down) var(--slope-down) var(--border-blur) var(--shade);
-  --shadow-raised-small: -4px -4px 10px var(--shimmer), 4px 4px 10px var(--shade);
-  --shadow-pressed-small: -4px -4px 10px var(--shade), 4px 4px 10px var(--shimmer);
+  /* Neumorfisme: hevet og nedtrykt flate */
+  --shade: rgba(150, 164, 190, 0.3);
+  --shimmer: rgba(255, 255, 255, 0.95);
+  --shadow-raised: 10px 10px 24px var(--shade), -10px -10px 24px var(--shimmer);
+  --shadow-raised-sm: 4px 4px 10px var(--shade), -4px -4px 10px var(--shimmer);
+  --shadow-pressed: inset 4px 4px 10px var(--shade), inset -4px -4px 10px var(--shimmer);
+
+  /* Radius */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
 
   /* Avstander: endre skalaen, så følger alt etter */
   --space-xs: 0.5rem;
@@ -45,31 +43,16 @@
   --space-md: 1.5rem;
   --space-lg: 3rem;
   --space-xl: 5rem;
-
-  /* Hvor avstandene brukes */
-  --header-padding: var(--space-sm) var(--space-lg);
-  --navbar-gap: var(--space-sm);
-  --navbar-link-padding: var(--space-xs) var(--space-sm);
-  --btn-padding: var(--space-xs) var(--space-md);
-  --btn-gap: var(--space-sm);
-  --page-padding: var(--space-sm) 0 var(--space-xl);
-  --section-gutter: var(--space-lg);
-  --hero-padding: var(--space-lg);
-  --hero-gap: var(--space-md);
-  --grid-gap: var(--space-lg);
-  --card-padding: var(--space-md);
-  --card-gap: var(--space-xs);
-  --footer-padding: var(--space-xs) var(--space-sm);
-  --footer-gap: var(--space-sm);
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --container: 72rem;
+  --header-height: 4.5rem;
 
   /* Tekst */
-  --font-body: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-size-body: 1.0625rem;
-  --font-size-small: 0.85rem;
-  --line-height: 1.6;
-  --color-text: #2f3a4d;
-  --color-muted: #4d596c;
-  --color-accent: #526DD7;
+  --font-size-small: 0.8125rem;
+  --line-height: 1.65;
 }
 
 /* 2. GRUNNSTIL ------------------------------------------- */
