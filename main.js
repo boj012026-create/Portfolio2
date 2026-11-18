@@ -79,4 +79,4 @@ const observer = new IntersectionObserver(
     threshold: 0,
   }
 );
-document.querySelectorAll('.page').forEach((s) => observer.observe(s));
+document.querySelectorAll('.section').forEach((s) => observer.observe(s));
