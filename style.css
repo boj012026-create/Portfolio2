@@ -300,9 +300,9 @@ a { color: var(--accent); }
 }
 .repo-card__image {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  /*aspect-ratio: 16 / 10;*/
   object-fit: cover;
-  object-position: top;
+  object-position: left top;
   border-radius: var(--radius-sm);
 }
 .repo-card__title { font-size: 1.5rem; }
