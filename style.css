@@ -28,18 +28,23 @@
   color-scheme: light;
 
   /* Farger */
-  --bg: #f3f5fa;
-  --surface: #f7f9fd;
-  --surface-raised: #fbfcff;
+  /*--bg: #f3f5fa;*/
+  --bg: #e8ecf4;
+/*  --surface: #f7f9fd;
+  --surface-raised: #fbfcff;*/
+  --surface: #e8ecf4;
+  --surface-raised: #eceff6;
   --ink: #1e2a44;
   --ink-muted: #5f6b85;
   --accent: #5468d4;
   --accent-soft: #7a8be0;
   --on-accent: #fff;
 
-  /* Neumorfisme: hevet og nedtrykt flate */
+  /* Neumorfisme: hevet og nedtrykt flate 
   --shade: rgba(150, 164, 190, 0.3);
-  --shimmer: rgba(255, 255, 255, 0.95);
+  --shimmer: rgba(255, 255, 255, 0.95);*/
+  --shade: #b3c1c7b8;
+  --shimmer: #fdfdfd; 
   --shadow-raised: 10px 10px 24px var(--shade), -10px -10px 24px var(--shimmer);
   --shadow-raised-sm: 4px 4px 10px var(--shade), -4px -4px 10px var(--shimmer);
   --shadow-pressed: inset 4px 4px 10px var(--shade), inset -4px -4px 10px var(--shimmer);
